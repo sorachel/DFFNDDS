@@ -14,7 +14,7 @@ model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
 # Define a list with sentences (1k - 100k sentences)
 train_sentences = []
-with open('/home/xumengdie/tmp/pycharm_project_238/guacamol_v1_all.smiles', 'r', encoding='utf8') as fIn:
+with open('./guacamol_v1_all.smiles', 'r', encoding='utf8') as fIn:
     for line in tqdm.tqdm(fIn):
         line = line.strip()
         if len(line) >= 10:
