@@ -46,7 +46,7 @@ def cold_drug_split(label_files, random_state):
     test_drugs = list(set(list(unique_drugs)) - set(list(train_drugs)))
 
     train_valid_data = data[data[['drug_1', 'drug_2']].isin(train_drugs).all(axis=1)]
-    test_data = data[~data[['drug_1', 'drug_2']].isin(train_drugs).all(axis=1)]
+    test_data = data[data[['drug_1', 'drug_2']].isin(test_drugs).all(axis=1)]
 
     train_data, valid_data = train_test_split(train_valid_data, train_size=0.75, random_state=random_state)
 
